@@ -1,0 +1,29 @@
+.snake-game-leaderboard {
+    width: 200px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  
+  .snake-game-leaderboard h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .snake-game-leaderboard ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .snake-game-leaderboard li {
+    margin-bottom: 5px;
+  }
+  

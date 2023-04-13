@@ -1,38 +1,438 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
+.App-header {
+  background-color: #282c34;
+  /* Adjust the padding values according to your preference */
+  padding: 5px 5px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.App-header h1 {
+  margin: 0;
+  /* Adjust the line-height value according to your preference */
+  line-height: 1.2;
+}
+
+.dropdown-toggle,
+.home-button {
+  /* Adjust the padding values according to your preference */
+  padding: 4px 12px;
+  margin-left: 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.spacer {
+  height: 100px;
+}
+
+.App-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-info {
+  background-color: #61dafb;
+  padding: 20px;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #282c34;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 10px; /* Ensure this line is present */
+  border: 1px solid white; /* Ensure this line is present */
+  border-radius: 4px; /* Ensure this line is present */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Ensure this line is present */
+  font-family: inherit; /* Add this line */
+  font-size: inherit; /* Add this line */
+  line-height: inherit; /* Add this line */
+}
+
+.dropdown-toggle:hover {
+  background-color: white; /* Ensure this line is present */
+  color: #282c34; /* Ensure this line is present */
+}
+
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform-origin: top;
+  transition: opacity 0.3s ease, max-height 0.5s ease;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  max-height: 500px; /* Adjust this value based on the size of your dropdown */
+}
+
+.dropdown-menu li {
+  padding: 12px 16px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.section {
+  border: 5px solid #61dafb;
+  width: 90%;
+  height: calc(100vh - 130px); /* Adjust this value as needed */
+  margin: 20px auto;
+  background-color: #282c34;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section:nth-child(odd) {
+  background-color: #282c34;
+}
+
+.section:nth-child(even) {
+  background-color: #444c56;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.section-content {
+  max-width: 800px;
+}
+
+.interactive-feature {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.interactive-feature:hover {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.section-transition {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  background-color: #61dafb;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.section-transition:hover {
+  background-color: #4caf50;
+}
+
+.home-button {
+  background-color: #282c34;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-left: 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+.classwork-container {
+  padding: 2rem;
+}
+
+.classwork-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.classwork-card {
+  background-color: #282c34;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.classwork-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.classwork-card a {
+  color: white;
+  text-decoration: none;
+}
+
+.classwork-card:hover a {
+  color: #282c34;
+}
+
+.homework-container {
+  padding: 2rem;
+}
+
+.homework-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.homework-card {
+  background-color: #282c34;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.homework-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.homework-card a {
+  color: white;
+  text-decoration: none;
+}
+
+.homework-card:hover a {
+  color: #282c34;
+}
+
+.projects-container {
+  padding: 2rem;
+}
+
+.projects-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.projects-card {
+  background-color: #282c34;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.projects-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.projects-card a {
+  color: white;
+  text-decoration: none;
+}
+
+.projects-card:hover a {
+  color: #282c34;
+}
+
+.about-me-container {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-text {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 1rem;
+}
+
+.about-me-image {
+  flex: 1;
+  max-width: 50%;
+  padding-left: 1rem;
+}
+
+.about-me-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.hobbies-button {
+  display: inline-block;
+  background-color: #282c34;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 16px;
+}
+
+.hobbies-button:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+.hobbies-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.education-goals {
+  display: flex;
+  justify-content: space-between;
+}
+
+.education, .goals {
+  width: 48%;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 16px;
+}
+
+.list li ul {
+  list-style-type: disc;
+  padding-left: 16px;
+  margin-top: 8px;
+}
+
+.resume-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #282c34;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-top: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+.resume-link-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header h1 {
+    margin-bottom: 10px;
+  }
+
+  .App-header nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .about-me-container {
+    flex-direction: column;
+  }
+
+  .about-me-text,
+  .about-me-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    font-size: calc(8px + 2vmin);
+  }
+
+  .section {
+    padding: 10px;
   }
 }
